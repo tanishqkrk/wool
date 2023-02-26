@@ -1,0 +1,88 @@
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: #d6e1f0;
+  /* color: white; */
+  /* background: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.app {
+  background: white;
+  width: 300px;
+  height: 80%;
+  border-radius: 15px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
+}
+
+.output {
+  background: #3785fe;
+  border-radius: 10px;
+  height: 100%;
+  /* width: fit-content; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.output img {
+  width: 100%;
+}
+
+.textInput {
+  width: calc(100% - 20px);
+  margin: 10px 0;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  /* padding-left: 5px; */
+}
+
+.inputContainer {
+  width: 100%;
+}
+
+.inputSection {
+  width: 100%;
+}
+
+.generateButton {
+  width: 100%;
+  background: #3785fe;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 0;
+}
+
+@media(max-width: 400px) {
+  .app {
+    width: 250px;
+  }
+}
+
+.navbar {
+  margin: 10px 0;
+}
+
+.navbarButtons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbarIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
