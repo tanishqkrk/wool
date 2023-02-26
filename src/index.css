@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100svh;
   margin: 0;
 }
 
@@ -85,4 +85,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #3785fe;
+  text-decoration: none;
 }
