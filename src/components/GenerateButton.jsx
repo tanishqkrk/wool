@@ -1,9 +1,9 @@
 import React from 'react'
 
-const GenerateButton = ({ generateQR }) => {
+const GenerateButton = ({ generateTextQR }) => {
     return (
         <div>
-            <button className='generateButton' onClick={generateQR} type="submit">Generate</button>
+            <button className='generateButton' onClick={generateTextQR} type="submit">Generate</button>
         </div>
     )
 }

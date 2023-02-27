@@ -7,9 +7,10 @@ const Navbar = () => {
         <div className="navbar">
             <div className="navbarButtons">
                 <Link to={'/'}><i className=" navbarIcon fa-solid fa-link"></i></Link>
-                <Link to={'/img'}><i className=" navbarIcon fa-solid fa-image"></i></Link>
+                {/* <Link to={'/img'}><i className=" navbarIcon fa-solid fa-image"></i></Link> */}
                 <Link to={'/wifi'}><i className=" navbarIcon fa-solid fa-wifi"></i></Link>
                 <Link to={'/contact'}><i className=" navbarIcon fa-solid fa-address-book"></i></Link>
+
             </div>
         </div>
     )
