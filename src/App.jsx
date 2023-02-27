@@ -6,12 +6,13 @@ import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import GenerateButton from "./components/GenerateButton"
 import ImgInput from "./components/ImgInput"
+import Loader from "./components/Loader"
 const App = () => {
   // This fetches the input data from TextInput component
   const [textInputInApp, setTextInputInApp] = useState("");
-  const [imgInputInApp, setImgInputInApp] = useState("")
+  // const [imgInputInApp, setImgInputInApp] = useState("")
   const [generatedQRCode, setGeneratedQRCode] = useState("/tanishqkrk.png");
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const RAPID_API_KEY = "81ea193ad8msh7f722ef5fa9d248p1e61afjsnd7e97c253601";
   const RAPID_API_HOST = "qrcode3.p.rapidapi.com"
   const objectToPass = {
@@ -53,15 +54,17 @@ const App = () => {
     };
     if (textInputInApp !== "" && textInputInApp) {
       fetch('https://qrcode3.p.rapidapi.com/qrcode/text', options)
+        .then(setIsLoading(true))
         .then((response) => response.blob())
         .then((response) => URL.createObjectURL(response))
         .then((response) => setGeneratedQRCode(response))
+        .then(setIsLoading(false))
       // .catch((err) => console.log(err))
     }
   }
 
-  const data = new FormData();
-  data.append("image", imgInputInApp);
+  // const data = new FormData();
+  // data.append("image", imgInputInApp);
 
   const generatedImageQR = () => {
     // fetch('https://qrcode3.p.rapidapi.com/images', options)
@@ -72,7 +75,7 @@ const App = () => {
     <React.Fragment>
       {/* <Navbar /> */}
       <div className='app'>
-        <Output generatedQRCode={generatedQRCode} />
+        {isLoading ? <Loader /> : <Output generatedQRCode={generatedQRCode} />}
         <div className="inputContainer">
           <Routes>
             <Route path="/" element={<TextInput setTextInputInApp={setTextInputInApp} />}></Route>
