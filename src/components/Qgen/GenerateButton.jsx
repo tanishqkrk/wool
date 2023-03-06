@@ -3,7 +3,7 @@ import React from 'react'
 const GenerateButton = ({ generateTextQR }) => {
     return (
         <div>
-            <button className='generateButton' onClick={generateTextQR} type="submit">Generate</button>
+            <button className='p-2 bg-primary w-full text-white rounded-lg' onClick={generateTextQR} type="submit">Generate</button>
         </div>
     )
 }
