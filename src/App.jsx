@@ -4,6 +4,7 @@ import Qgen from "./components/Qgen/Qgen"
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import HomeScreen from './components/HomeScreen'
+import Urls from './components/Urls/Urls'
 const App = () => {
     return (
         <div className='h-screen flex flex-col'>
@@ -11,6 +12,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<HomeScreen />}></Route>
                 <Route path="/qgen" element={<Qgen />}></Route>
+                <Route path="/urls" element={<Urls />}></Route>
             </Routes>
             <Footer />
         </div>

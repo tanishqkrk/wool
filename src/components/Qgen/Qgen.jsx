@@ -4,7 +4,7 @@ import Output from './Output'
 import { useState } from 'react'
 import GenerateButton from "./GenerateButton"
 import Loader from "./Loader"
-import "./Qgen.css"
+
 const App = () => {
     // This fetches the input data from TextInput component
     const [textInputInApp, setTextInputInApp] = useState("");
@@ -51,6 +51,7 @@ const App = () => {
         };
         if (textInputInApp !== "" && textInputInApp) {
             fetch('https://qrcode3.p.rapidapi.com/qrcode/text', options)
+
                 .then(setIsLoading(true))
                 .then((response) => response.blob())
                 .then((response) => URL.createObjectURL(response))
@@ -60,7 +61,7 @@ const App = () => {
     }
 
     return (
-        <div className='h-full flex flex-col justify-center items-center bg-gray-100'>
+        <div className='h-full flex flex-col justify-center items-center bg-gray-100 bg-gray-50'>
             <div className='w-[400px]'>
                 {isLoading ? <Loader /> : <Output generatedQRCode={generatedQRCode} />}
                 <div className="inputContainer">
